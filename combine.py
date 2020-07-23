@@ -1,5 +1,5 @@
 list_of_files = ["astadhyayi.txt","bhagvadgita.txt","literature.txt","uoh.txt"]
-PATH = "/home/raviteja/ibm_sandhi/sanskrit_sandhi_corpus-master/"
+PATH = "/sanskrit_sandhi_corpus-master/"
 
 with open(PATH+"combined_inp.txt","w") as f, open(PATH+"combined_out.txt","w") as g:
     for file in list_of_files:
@@ -10,4 +10,4 @@ with open(PATH+"combined_inp.txt","w") as f, open(PATH+"combined_out.txt","w") a
         for line in text:
             inp,out = line.split(",")
             f.write(inp.replace(" ","")+"\n")
-            g.write(out.replace(" ",""))    
+            g.write(out.replace(" ",""))
