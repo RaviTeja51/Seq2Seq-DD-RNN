@@ -2,7 +2,7 @@ from indic_transliteration import sanscript
 from indic_transliteration.sanscript import transliterate
 
 list_of_files = ["astadhyayi.txt","bhagvadgita.txt","literature.txt","uoh.txt"]
-PATH = "/home/raviteja/ibm_sandhi/sanskrit_sandhi_corpus-master/"
+PATH = "sanskrit_sandhi_corpus-master/"
 
 for file in list_of_files:
     file_path = PATH + file
