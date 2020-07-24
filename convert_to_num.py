@@ -1,4 +1,4 @@
-PATH = "/home/raviteja/ibm_sandhi/sanskrit_sandhi_corpus-master/"
+PATH = "sanskrit_sandhi_corpus-master/"
 list_of_files = ["combined_inp","combined_out"]
 
 for file in list_of_files:

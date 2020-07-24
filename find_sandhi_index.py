@@ -1,11 +1,11 @@
 def main():
-    with open("/home/raviteja/ibm_sandhi/sanskrit_sandhi_corpus-master/combined_inp.txt") as f:
+    with open("sanskrit_sandhi_corpus-master/combined_inp.txt") as f:
         inp = f.readlines()
 
-    with open("/home/raviteja/ibm_sandhi/sanskrit_sandhi_corpus-master/combined_out.txt") as g:
+    with open("sanskrit_sandhi_corpus-master/combined_out.txt") as g:
         out = g.readlines()
 
-    with open("/home/raviteja/ibm_sandhi/sanskrit_sandhi_corpus-master/sandhi_pos.txt","w") as h:
+    with open("sanskrit_sandhi_corpus-master/sandhi_pos.txt","w") as h:
         for i,j in zip(inp,out):
             ip = i.strip("\n")
             op = j.strip("\n")
