@@ -5,3 +5,4 @@ This repo contains the code implementing the paper [Seq2Seq Double decoder](http
 The dataset is forked from [sanskrit-sandhi](https://github.com/sanskrit-sandhi/sanskrit_sandhi_corpus) github repo.
 
 The sub directory _sanskrit_sandhi_corpus-master_ contains the dataset.
+The sub directory _Nalacharitam_ contains words from Nalacharitham.
