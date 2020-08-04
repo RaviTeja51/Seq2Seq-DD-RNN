@@ -14,7 +14,6 @@ class LuongAttention(layers.Layer):
 
         elif method == "concat":
             self.fc = layers.Dense(hidden_size, use_bias=False)
-            self.weight = layers.Dense(hidden_size, use_bias=False)
             self.v_a = Dense(units=1, use_bias=False)
 
     def __call__(self, decoder_hidden, encoder_output):
@@ -32,9 +31,8 @@ class LuongAttention(layers.Layer):
             score =  layers.Dot([2,2])([weighted_encoder_output, decoder_hidden])  #SHAPE (BATCH_SIZE, TIME STEP, 1)
 
         elif self.method == "concat":
-            weighted_encoder_output = self.weight(encoder_output)  #SHAPE(BATCH_SIZE, TIME STEP, UNITS)
-            weighted_decoder_hidden = self.fc(decoder_hidden)   #SHAPE(BATCH_SIZE, 1, UNITS)
             weighted_sum = weighted_encoder_output  + weighted_decoder_hidden  #SHAPE(BATCH_SIZE, TIME STEP, UNITS)
+            weighted_sum = self.fc(weighted_sum) #SHAPE(BATCH_SIZE, TIME STEP, UNITS)
             weighted_sum =  layers.Activation("tanh")(weighted_sum) #SHAPE (BATCH_SIZE, TIME STEP, UNITS)
             score = self.v_a(weighted_sum)   #SHAPE (BATCH_SIZE, TIME STEP, 1)
 
